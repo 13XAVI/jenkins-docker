@@ -1,0 +1,13 @@
+FROM alpine:latest
+
+RUN apk add --no-cache \
+    python3 \
+    openjdk17-jre \
+    py3-pip \
+    git \
+    curl \
+    openssh-client
+
+RUN adduser -D -u 1000 jenkins
+USER jenkins
+WORKDIR /home/jenkins
